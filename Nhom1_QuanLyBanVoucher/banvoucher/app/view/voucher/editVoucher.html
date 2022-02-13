@@ -1,0 +1,137 @@
+
+<style>
+    body {
+        background-color: pink;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0,0,0, 0.3);
+        width: 400px;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 0 0 20px;
+    }
+
+    hr {
+        margin-bottom: 20px;
+    }
+
+    .form {
+        padding: 30px 40px;
+    }
+
+    .form-control {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        position: relative;
+    }
+
+    .form-control label,
+    .form-gender {
+        color: #777;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .form-control input {
+        border: 2px solid #f0f0f0;
+        border-radius: 4px;
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .form-control input:focus {
+        outline: 0;
+        border-color: #777;
+    }
+
+    .form button {
+        cursor: pointer;
+        background-color: pink;
+        border: 2px solid pink;
+        border-radius: 4px;
+        border-color: #fff;
+        display: block;
+        font-size: 16px;
+        padding: 10px;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+</style>
+
+<body>
+<div class="container">
+    <form action="" id="form" class="form" method="POST" enctype="multipart/form-data">
+        <h1>Chỉnh sửa Voucher</h1>
+        <hr>
+        <div class="form-gender">
+            Chọn loại Voucher: <br>
+            <input type="radio" id="1" name="idvoucher" value="1" {% if voucher.idvoucher == 1 %} checked="checked" {% endif %}>
+            <label for="1">Ẩm thực</label><br>
+
+            <input type="radio" id="2" name="idvoucher" value="2" {% if voucher.idvoucher == 2 %} checked="checked" {% endif %}>
+            <label for="2">Spa & làm đẹp</label><br>
+
+            <input type="radio" id="3" name="idvoucher" value="3" {% if voucher.idvoucher == 3 %} checked="checked" {% endif %}>
+            <label for="3">Giải trí</label><br>
+
+            <input type="radio" id="4" name="idvoucher" value="4" {% if voucher.idvoucher == 4 %} checked="checked" {% endif %}>
+            <label for="4">Thể thao</label><br>
+
+            <input type="radio" id="5" name="idvoucher" value="5" {% if voucher.idvoucher == 5 %} checked="checked" {% endif %}>
+            <label for="5">Hotel</label><br>
+
+            <input type="radio" id="6" name="idvoucher" value="6" {% if voucher.idvoucher == 6 %} checked="checked" {% endif %}>
+            <label for="6">Tour du lịch</label><br>
+
+            <input type="radio" id="7" name="idvoucher" value="7" {% if voucher.idvoucher == 7 %} checked="checked" {% endif %}>
+            <label for="7">Điện Tử</label><br>
+        </div>
+        <div class="form-control">
+            <label for="Vouchername">Tên Voucher</label>
+            <input type="text" id="Vouchername" name="Vouchername" placeholder="Nhập tên Voucher" required value="{{voucher.ten}}">
+        </div>
+        <div class="form-control">
+            <label for="VoucherDescription">Mô tả</label>
+            <input class="VoucherDescription" type="text" id="VoucherDescription" name="VoucherDescription" placeholder="Nhập mô tả Voucher" required value="{{voucher.mota}}">
+        </div>
+        <div class="form-control">
+            <label for="VoucherCode">Code</label>
+            <input type="text" id="VoucherCode" name="VoucherCode" placeholder="Nhập code Voucher" required value="{{voucher.code}}">
+        </div>
+        <div class="form-control">
+            <label for="VoucherAmount">Số lượng</label>
+            <input type="number" id="VoucherAmount" name="VoucherAmount" placeholder="Nhập số lượng Voucher" required value="{{voucher.soluong}}">
+        </div>
+        <div class="form-control">
+            <label for="VoucherPrice">Giá bán</label>
+            <input type="text" id="VoucherPrice" name="VoucherPrice" placeholder="Nhập giá Voucher/Đồng" required value="{{voucher.giaban}}">
+        </div>
+        <div class="form-control">
+            <label for="VoucherStartDate">Ngày bắt đầu</label>
+            <input type="date" id="VoucherStartDate" name="VoucherStartDate" required value="{{voucher.ngaybatdau}}">
+        </div>
+        <div class="form-control">
+            <label for="VoucherEndDate">Ngày kết thúc</label>
+            <input type="date" id="VoucherEndDate" name="VoucherEndDate" required value="{{voucher.ngayketthuc}}">
+        </div>
+        <div class="form-control">
+            <label for="VoucherStore">Cửa hàng</label>
+            <input type="text" id="VoucherStore" name="VoucherStore" placeholder="Nhập tên cửa hàng" required value="{{voucher.cuahang}}">
+        </div>
+        <button type="submit">Chỉnh sửa Voucher</button>
+    </form>
+</div>
+</body>

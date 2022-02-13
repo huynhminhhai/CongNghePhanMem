@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ pageTitle }}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://localhost:8888/banvoucher/app/view/style.css">
+    <style>
+        .history-header{
+        font-size: 46px;
+        color: #000000;
+        text-transform: uppercase;
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: 15px;
+        }
+        .history-table{
+        width:100%;
+        table-layout: fixed;
+        }
+        .history-tbl-header{
+        background-color: rgba(255,255,255,0.3);
+        }
+        .history-tbl-content{
+        height:450px;
+        overflow-x:auto;
+        margin-top: 0px;
+        border: 1px solid black;
+        }
+        .history-table th{
+        padding: 20px 15px;
+        text-align: center;
+        font-weight: 500;
+        font-size: 16px;
+        color: #000000;
+        text-transform: uppercase;
+        font-weight: bold;
+        }
+        .history-table td{
+        padding: 15px;
+        text-align: center;
+        vertical-align:middle;
+        font-weight: 400;
+        font-size: 14px;
+        color: #000000;
+        border-bottom: solid 1px black;
+        }
+        body{
+        background: -webkit-linear-gradient(left, 	#FFB6C1, pink);
+        background: linear-gradient(to right, 	#FFB6C1, pink);
+        }
+        section{
+        margin: 50px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        }
+        ::-webkit-scrollbar-thumb {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<script>
+    $(window).on("load resize ", function() {
+        var scrollWidth = $('.history-tbl-content').width() - $('.history-tbl-content table').width();
+        $('.history-tbl-header').css({'padding-right':scrollWidth});
+    }).resize();
+</script>
+
+<section>
+    <h1 class="history-header">Lịch Sử Mua Vouhcer</h1>
+    <div class="history-tbl-header">
+      <table class="history-table" cellpadding="0" cellspacing="0" border="0">
+        <thead>
+          <tr>
+            <th>Tên Voucher</th>
+            <th>Đơn Giá</th>
+            <th>Ngày Mua</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="history-tbl-content">
+      <table class="history-table" cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+            {% for item in history %}
+          <tr>
+            <td style="text-align:left; padding-left: 150px;"><img src="http://localhost:8888/banvoucher/app/view/content/img/{{item.hinhanh}}" class="avatar">    {{item.ten}}</td>
+            <td>{{item.giaban}}</td>
+            <td>{{item.ngaydathang}}</td>
+          </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,67 @@
+<style>
+    body{
+        padding-top: 50px;
+        background-color: pink;
+    }
+    table{
+
+        text-align: center;
+    }
+    td{
+        padding: 10px;
+    }
+    tr.item{
+        border-top: 1px solid #5e5e5e;
+        border-bottom: 1px solid #5e5e5e;
+    }
+
+    tr.item:hover{
+        background-color: #d9edf7;
+    }
+
+    tr.item td{
+        min-width: 150px;
+    }
+
+    tr.header{
+        font-weight: bold;
+    }
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    a:hover{
+        color: deeppink;
+        font-weight: bold;
+    }
+
+    caption{
+        font-size: 26px;
+        font-weight: bold;
+    }
+</style>
+
+
+<table cellpadding="10" cellspacing="10" border="0" style="border-collapse: collapse; margin: auto">
+    <caption>Quản Lý Nhân Viên</caption>
+    <tr class="control" style="text-align: left; font-weight: bold; font-size: 20px">
+        <td colspan="5">
+            <a href="http://localhost:8888/banvoucher/staff/addStaff">Thêm nhân viên</a>
+        </td>
+    </tr>
+    <tr class="header">
+        <td>Họ tên</td>
+        <td>Ngày sinh</td>
+        <td>Giới tính</td>
+        <td>Điện thoại</td>
+        <td>Email</td>
+        <td>Địa chỉ</td>
+    </tr>
+    {% include 'components/StaffList.html' %}
+    <tr class="control" style="text-align: right; font-weight: bold; font-size: 17px">
+        <td colspan="5">
+            <p>Số lượng nhân viên: {{soluong}} </p>
+        </td>
+    </tr>
+</table>

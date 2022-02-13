@@ -1,0 +1,31 @@
+.login {
+    border: solid black 1px;
+    border-radius: 10%;
+    width: 338px;
+    float: left;
+    padding: 15px 20px 15px;
+}
+.flt-r{
+    float: right;
+}
+.flt-l{
+    float: left;
+}
+.logo {
+    width: 80px;
+}
+.avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 100%;
+}
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+
+
+body{
+    background-color: pink;
+}

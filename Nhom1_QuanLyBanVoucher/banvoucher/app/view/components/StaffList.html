@@ -1,0 +1,11 @@
+{% for staff in staffs  %}
+    <tr class="item">
+        <td>{{ staff.hoten }}</td>
+        <td>{{ staff.ngaysinh }}</td>
+        <td>{{ staff.gioitinh }}</td>
+        <td>{{ staff.dienthoai }}</td>
+        <td>{{ staff.email}}</td>
+        <td>{{ staff.diachi}}</td>
+        <td><a href="http://localhost:8888/banvoucher/staff/edit?id={{staff.id}}">Sửa</a> | <a href="http://localhost:8888/banvoucher/staff/StaffList?delete={{staff.id}}" class="delete">Xóa</a></td>
+    </tr>
+{% endfor %}

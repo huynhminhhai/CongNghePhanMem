@@ -1,0 +1,30 @@
+{% for voucher in vouchers %}
+
+<div class="card flt-l col-sm-9 col-md-5 col-lg-3 m-3" style="height: 500px;">
+
+    <div class="card-header">
+        <img src="http://localhost:8888/banvoucher/app/view/content/img/{{voucher.hinhanh}}" class="w-100">
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{voucher.ten}}</h5>
+        <p class="card-text">Mô Tả: {{voucher.mota}}</p>
+        <a href="#" class="badge badge-info">Xem Thêm</a>
+    </div>
+    <div class="card-footer">
+        <p class="price">
+            {{ voucher.giaban }} đồng
+        </p>
+        {% if nhomtk==1 or nhomtk == 2 %}
+            <a href="http://localhost:8888/banvoucher/voucher/edit?id={{voucher.id}}" class="flt-l btn btn-primary">Sửa</a>
+            <a href="http://localhost:8888/banvoucher/voucher/delete?id={{voucher.id}}" class="flt-r btn btn-danger">Xóa</a>
+        {% elseif nhomtk==3 %}
+        <a href="http://localhost:8888/banvoucher/cart/buy?id={{voucher.id}}" class="flt-r btn btn-primary">Mua hàng</a>
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endfor %}
+
+

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card d-flex justify-content-center w-50 mx-auto">
+
+    <div class="card-header">
+        <img src="http://localhost:8888/banvoucher/app/view/content/img/{{voucher.hinhanh}}" class="w-100">
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{voucher.ten}}</h5>
+        <p class="card-text">Mô Tả: {{voucher.mota}}</p>
+        <a href="#" class="badge badge-info">Xem Thêm</a>
+    </div>
+    <div class="card-footer">
+        <p class="price">
+            {{ voucher.giaban }} đồng
+        </p>
+        <a href="http://localhost:8888/banvoucher/cart/confirm?id={{voucher.id}}" class="flt-l btn btn-danger">Thanh toán MoMo</a>
+        <a href="http://localhost:8888/banvoucher/cart/confirm?id={{voucher.id}}" class="flt-r btn btn-danger">Thanh toán Airpay</a>
+
+    </div>
+
+</div>
+
+{% endblock %}
